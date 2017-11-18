@@ -1,10 +1,19 @@
 package com.facear.myemployee.model;
 
-public class ImpostosEmpregado {
+public class Employee_taxes 
+                       {
 
-	private int codigo = 0;
-	private String descricao = null;
-	private double valor = 0;
+	           private int codigo = 0;
+	           private String descricao = null;
+	           private double valor = 0;
+	
+	
+	public Employee_taxes(int codigo, String descricao, double valor) {
+		      super();
+		      this.codigo = codigo;
+		      this.descricao = descricao;
+		      this.valor = valor;
+	}
 	
 	public int getCodigo() {
 		return codigo;

@@ -12,27 +12,34 @@ public class HoleriteDAO extends GenericDAO{
 
 	private PreparedStatement ps;	
 	private String SQL_INSERT = ("");
-	private String SQL_SELECT = ("");	
+	
+	
+	/*listar a tabela holerite de acordo com o empregador */
+	private String INNERJOIN = ("SELECT * FROM TB_EMPREGADOR"
+			+ "INNER JOIN  TB_CONTRATO ON (TB_CONTRATO.empregadorId == TB_EMPREGADOR.Id)"
+			+ "WHERE empregador.nome =Josmar Bahia;");	
 	
 	
 	public void insert(){
 		
 	}
 	
-	/*method list*/
+	/*Method list*/
 	public List<Holerite> listar() throws ClassNotFoundException,IOException,SQLException{
 
 		List<Holerite> lista = new ArrayList<Holerite>();
 
  		openConnection();
 
-		ps = connect.prepareStatement("");
+		ps = connect.prepareStatement(INNERJOIN);
 
 		ResultSet rs = ps.executeQuery();
 
 		if(rs != null){
 			while(rs.next()){
-				Holerite ho = new Holerite(0,null, null, null, null);
+				
+				
+				Holerite ho = new Holerite();
 				lista.add(ho);
 			}
 		}

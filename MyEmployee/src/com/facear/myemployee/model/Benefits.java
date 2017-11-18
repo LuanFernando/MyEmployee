@@ -1,10 +1,11 @@
 package com.facear.myemployee.model;
 
-public class Beneficios {
+public class Benefits 
+                  {
 	
-	private int codigo = 0;
-	private String descricao = null;
-	private double valor = 0;
+	          private int codigo = 0;
+	          private String descricao = null;
+	          private double valor = 0;
 	
 	public int getCodigo() {
 		return codigo;

@@ -1,56 +1,64 @@
 package com.facear.myemployee.model;
 
-public class Holerite {
+public class Holerite 
+                  {
+	          private int codigo = 0;
+	          private Employer  employer;
+	          private Employee employee;
+	          private Contract_agreement contract_agreement;
+	          private Benefits  benefits;
+	          private Employee_taxes impostos = new Employee_taxes(codigo, null, codigo);
 	
-	private int codigo = 0;
-	private Empregador  empregador;
-	private Empregado empregado;
-	private Beneficios  beneficios;
-	private Contrato contrato;
-	
-	public Holerite(int codigo,Empregador empregador,Empregado empregado,Beneficios beneficios, Contrato contrato)
+	public Holerite()
 	{
-		this.codigo = codigo;
-		this.empregador =  empregador;
-		this.empregado = empregado;
-		this.beneficios = beneficios;
-		this.contrato = contrato;
+		//Construct default
 	}
 	
-	
+	public Holerite(int codigo, Employer employer, Employee employee, Contract_agreement contract_agreement,
+			Benefits benefits, Employee_taxes impostos) {
+		     super();
+		     this.codigo = codigo;
+		     this.employer = employer;
+		     this.employee = employee;
+		     this.contract_agreement = contract_agreement;
+		     this.benefits = benefits;
+		     this.impostos = impostos;
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public Empregador getEmpregador() {
-		return empregador;
+	public Employer getEmployer() {
+		return employer;
 	}
-	public void setEmpregador(Empregador empregador) {
-		this.empregador = empregador;
+	public void setEmployer(Employer employer) {
+		this.employer = employer;
 	}
-	public Empregado getEmpregado() {
-		return empregado;
+	public Employee getEmployee() {
+		return employee;
 	}
-	public void setEmpregado(Empregado empregado) {
-		this.empregado = empregado;
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
-	public Beneficios getBeneficios() {
-		return beneficios;
+	public Contract_agreement getContract_agreement() {
+		return contract_agreement;
 	}
-	public void setBeneficios(Beneficios beneficios) {
-		this.beneficios = beneficios;
+	public void setContract_agreement(Contract_agreement contract_agreement) {
+		this.contract_agreement = contract_agreement;
 	}
-	public Contrato getContrato() {
-		return contrato;
+	public Benefits getBenefits() {
+		return benefits;
 	}
-	public void setContrato(Contrato contrato) {
-		this.contrato = contrato;
+	public void setBenefits(Benefits benefits) {
+		this.benefits = benefits;
 	}
-	
-	
-	
-	
-	
+	public Employee_taxes getImpostos() {
+		return impostos;
+	}
+	public void setImpostos(Employee_taxes impostos) {
+		this.impostos = impostos;
+	}		
 }
