@@ -46,6 +46,8 @@ public class EmployeeDAO extends GenericDAO{
 
 			if(rs != null){
 				while(rs.next()){
+					/*new object para nao dar bug de sobrecrever os dados anteriores*/
+					employee = new Employee();
 					
 					/*Empregado*/
 					employee.setCodigo(rs.getInt("contract_agreement.EmpregadoId"));
