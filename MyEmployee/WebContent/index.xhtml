@@ -37,25 +37,25 @@ body {
 					<f:facet name="header">
 						<h:outputLabel value="Id" />
 					</f:facet>
-					<h:outputText value="#{c.contract_agreement.codigo}" />
+					<h:outputText value="#{c.codigo}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputLabel value="Name" />
 					</f:facet>
-					<h:outputText value="#{c.employee.nomecompleto}" />
+					<h:outputText value="#{c.cargo}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputLabel value="Cargo" />
 					</f:facet>
-					<h:outputText value="#{c.cargo.descricao}" />
+					<h:outputText value="#{c.cargo}" />
 				</h:column>
 				<h:column>
 					<h:commandLink value="View"
 						action="#">
 						<f:setPropertyActionListener
-							target="#" value="#{c}" />
+							target="#hybridManagedBean" value="#{c}" />
 					</h:commandLink>
 				</h:column>
 

@@ -3,11 +3,14 @@ package com.facear.myemployee.beans;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import com.facear.myemployee.model.Contract_agreement;
+import com.facear.myemployee.model.Employee;
+import com.facear.myemployee.model.Employer;
 import com.facear.myemployee.model.Holerite;
 import com.facear.myemployee.service.EmployeeService;
 import com.facear.myemployee.service.HoleriteService;
@@ -20,17 +23,22 @@ public class HybridManagedBean implements Serializable
 
 	private Holerite holerite;
 	private List<Holerite> listHolerite;
+	private Employee employee;
+	private Employer employer;
+	private Contract_agreement contract;
 	private List<Contract_agreement> listEmpregado;
 	private HoleriteService service;
 	private EmployeeService serviceEm;
 
-	public HybridManagedBean()throws ClassNotFoundException, IOException, SQLException
+	public HybridManagedBean() throws ClassNotFoundException, IOException, SQLException
 	{
 		service = new HoleriteService();
+		contract = new Contract_agreement(0, employer, employee, null, 0.00, null, null, 0);
+		serviceEm = new EmployeeService();
 		holerite = new Holerite();
 		listEmpregado = serviceEm.listAll();
 		
-		System.out.println("testing yes");
+	
 	}
 	
 	/*Method de insert*/
@@ -38,7 +46,7 @@ public class HybridManagedBean implements Serializable
 	{
 		service.insertHolerite(holerite);
 		holerite = new Holerite();
-		/*listHolerite = service.listAll();*/
+		listHolerite = service.listAll();
 		return "index";
 	}
 	

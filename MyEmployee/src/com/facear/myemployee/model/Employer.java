@@ -7,7 +7,7 @@ import java.util.Date;
 public class Employer 
                    {
 
-	          private Integer codigo;
+	          private int codigo;
 	          private String nomeCompleto;
 	          private Date dataNascimento;
 	          private String cpf;
@@ -29,7 +29,7 @@ public class Employer
 		//Construct default	
 	}
 	
-	public Employer(Integer codigo, String nomeCompleto, Date dataNascimento, String cpf, String cnpj,
+	public Employer(int codigo, String nomeCompleto, Date dataNascimento, String cpf, String cnpj,
 			String telefoneFixo, String telefoneCelular, String cep, String enderecoRua, Integer enderecoNumero,
 			String bairro, String cidade, String uf, String email, String status, String sexo) {
 		      super();
@@ -51,10 +51,10 @@ public class Employer
 		      this.sexo = sexo;
 	}
 
-	public Integer getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 	public String getNomeCompleto() {

@@ -13,9 +13,10 @@ public class EmployeeService
 	      EmployeeDAO dao = new EmployeeDAO();
 	
 	      public List<Contract_agreement> listAll() throws ClassNotFoundException, IOException, SQLException
- 	                          {	
+ 	                          {
 		             List<Contract_agreement> list = new ArrayList<Contract_agreement>();
 		             list = dao.listar();
+		             
 		return list;
 	}
 }

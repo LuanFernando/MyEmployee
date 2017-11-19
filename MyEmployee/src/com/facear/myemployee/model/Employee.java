@@ -5,7 +5,7 @@ import java.util.Date;
 public class Employee 
                  {
 
-	           private Integer codigo;
+	           private int codigo;
 	           private String nomecompleto;
 	           private Date dataNascimento;
 	           private String cpf;
@@ -29,7 +29,7 @@ public class Employee
 	}
 	
 
-	public Employee(Integer codigo, String nomeCompleto, Date dataNascimento, String cpf, String rg,
+	public Employee(int codigo, String nomeCompleto, Date dataNascimento, String cpf, String rg,
 			String telefoneFixo, String telefoneCelular, String cep, String enderecoRua, Integer enderecoNumero,
 			String complemento, String bairro, String cidade, String uf, String email, String status, String sexo) {
 		       super();
@@ -52,11 +52,11 @@ public class Employee
 		       this.sexo = sexo;
 	}
 
-	public Integer getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Integer codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
