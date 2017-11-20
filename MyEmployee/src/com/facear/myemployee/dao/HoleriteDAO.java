@@ -6,11 +6,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.facear.myemployee.model.Holerite;
+import com.facear.myemployee.model.*;
 
 public class HoleriteDAO extends GenericDAO
                                     {
 	private PreparedStatement ps;
+	
+	private Holerite ho ;
+	private Employee employee = new Employee(0, null, null, null, null, null, null, null, null, 0, null, null, null, null, null, null, null);
+	private Employer employer = new Employer(0, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+	private Contract_agreement contract;
+	private Employee_taxes taxes;
+	private Benefits benefits;
+	private Cargo cargo;
+	
 	
 	/*Inserir holerite no database*/
 	private String INSERT_SQL = ("INSERT INTO holerite (EmpregadorId,EmpregadoId,SalarioBase,Desconto,Irrf,Inss,"
@@ -18,13 +27,13 @@ public class HoleriteDAO extends GenericDAO
 			                    + "VALUES(?,?,?,?,?,?,?,?,?,?)");
 	
 	/*listar a tabela holerite de acordo com o empregador */
-	private String INNERJOIN = ("SELECT * FROM TB_EMPREGADOR"
-			                   + "INNER JOIN  TB_CONTRATO ON (TB_CONTRATO.empregadorId == TB_EMPREGADOR.Id)"
-			                   + "WHERE empregador.nome =Josmar Bahia;");	
+	private String SELECT_HOLERITE = ("SELECT * FROM contract_agreement"
+			                        + "INNER JOIN employee ON (contract_agreement.EmpregadoId = employee.Codigo)"
+			                        + "INNER JOIN employer ON (contract_agreement.EmpregadorId = employer.Codigo)"
+			                        + "INNER JOIN cargo ON (contract_agreement.CargoId = cargo.Codigo)"
+			                        + "INNER JOIN holerite ON (contract_agreement.EmpregadoId = holerite.EmpregadoId)"
+			                        + "WHERE employee.Nome=?");	
 	
-	
-	
-
 
 	public void insert(Holerite h)
 	                            {
@@ -59,22 +68,56 @@ public class HoleriteDAO extends GenericDAO
 	}
 	
 	
-	/*Method list*/
+	/*Method list holerite*/
 	public List<Holerite> listar() throws ClassNotFoundException,IOException,SQLException{
 
 		List<Holerite> lista = new ArrayList<Holerite>();
+		
 
  		openConnection();
 
-		ps = connect.prepareStatement(INNERJOIN);
+		ps = connect.prepareStatement(SELECT_HOLERITE);
+		ps.setString(1, "Maria Luiza Freitas");
 
 		ResultSet rs = ps.executeQuery();
 
 		if(rs != null){
 			while(rs.next()){
 				
+				ho = new Holerite();
+				employee = new Employee();
+				employer = new Employer();
+				contract = new Contract_agreement(0, employer, employee, INSERT_SQL, null, INSERT_SQL, INSERT_SQL, 0);
+				cargo = new Cargo(0, null, null);
 				
-				Holerite ho = new Holerite();
+				employee.setCodigo(rs.getInt("employee.Codigo"));
+				employee.setNomeCompleto(rs.getString("employee.Nome"));
+				
+				employer.setCodigo(rs.getInt("employer.Codigo"));
+				employer.setNomeCompleto(rs.getString("employer.Nome"));
+				
+				contract.setCodigo(rs.getInt("contract_agreement.Codigo"));
+				contract.setSalario(rs.getDouble("contract_agreement.Salario"));
+				
+				cargo.setCodigo(rs.getInt("cargo.Codigo"));
+				cargo.setDescricao(rs.getString("cargo.Descricao"));
+	
+				
+				/*Passando os valores para o objeto holerite*/
+				ho.setCodigo(rs.getInt("holerite.Codigo"));
+				
+				ho.setEmployee(employee);
+				ho.setCargo(cargo);
+				ho.setEmployer(employer);
+				ho.setContract_agreement(contract);
+				ho.setImpostos(taxes);
+				ho.setBenefits(benefits);
+				
+				ho.setDatagerar(rs.getString("holerite.DataGerar"));
+                ho.setStatus(rs.getString("holerite.Status"));
+                ho.setTotalliquido(rs.getDouble("holerite.TotalLiquido"));
+                ho.setDesconto(rs.getDouble("holerite.Desconto"));
+                
 				lista.add(ho);
 			}
 		}
@@ -82,7 +125,4 @@ public class HoleriteDAO extends GenericDAO
 
 		return lista;
 	}
-	
-	
-
 }

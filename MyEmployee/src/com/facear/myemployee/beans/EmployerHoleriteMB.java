@@ -15,29 +15,33 @@ import com.facear.myemployee.model.Holerite;
 import com.facear.myemployee.service.EmployeeService;
 import com.facear.myemployee.service.HoleriteService;
 
-@ManagedBean(name = "hybridManagedBean")
+@ManagedBean(name = "employerHoleriteMB")
 @SessionScoped
-public class HybridManagedBean implements Serializable
+public class EmployerHoleriteMB implements Serializable
 {
 	private static final long serialVersionUID = -9004785433894347006L;	
 
 	private Holerite holerite;
-	private List<Holerite> listHolerite;
 	private Employee employee;
 	private Employer employer;
 	private Contract_agreement contract;
+	
 	private List<Contract_agreement> listEmpregado;
+	private List<Holerite> listHolerite;
+	
 	private HoleriteService service;
 	private EmployeeService serviceEm;
 
-	public HybridManagedBean() throws ClassNotFoundException, IOException, SQLException
+	public EmployerHoleriteMB() throws ClassNotFoundException, IOException, SQLException
 	{
 		service = new HoleriteService();
-		contract = new Contract_agreement(0, employer, employee, null, 0.00, null, null, 0);
 		serviceEm = new EmployeeService();
-		holerite = new Holerite();
-		listEmpregado = serviceEm.listAll();
 		
+		contract = new Contract_agreement(0, employer, employee, null, 0.00, null, null, 0);
+		holerite = new Holerite(0, employer, employee, contract, null, null, null, null, null, null);
+		
+		/* return list employee */
+		listEmpregado = serviceEm.listAll();
 	
 	}
 	
@@ -73,5 +77,6 @@ public class HybridManagedBean implements Serializable
 	public void setListEmpregado(List<Contract_agreement> listEmpregado) {
 		this.listEmpregado = listEmpregado;
 	}
+	
 	
 }

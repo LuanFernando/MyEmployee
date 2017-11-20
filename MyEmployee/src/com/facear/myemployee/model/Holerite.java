@@ -14,6 +14,7 @@ public class Holerite
 	          private Double totalliquido = 0.00;
 	          private String status;// TRUE FALSE
 	          private Employee_taxes impostos = new Employee_taxes(codigo, null, codigo);
+	          private Cargo cargo;
 	          
 	
 	public Holerite()
@@ -104,6 +105,14 @@ public class Holerite
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
 	}	
 	
 	

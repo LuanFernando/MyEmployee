@@ -27,12 +27,12 @@ body {
 	<!-- include header -->
 	<ui:include src="include/header.xhtml" />
 
-	<!-- Pagina princiapl -->
+	<!-- Pagina principal -->
 	<main class="container"> <f:view>
 
 		<h:form>
 			<h:dataTable styleClass="table table-striped" var="c"
-				value="#{hybridManagedBean.listEmpregado}">
+				value="#{employerHoleriteMB.listEmpregado}">
 				<h:column>
 					<f:facet name="header">
 						<h:outputLabel styleClass="list-group-item active" value="N° Contrato" />
@@ -56,13 +56,13 @@ body {
 				<h:commandLink value=" Generate" styleClass="btn btn-default"
 						action="showHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{hybridManagedBean.Contract_agreement}" value="#{c}" />
+							target="#{EmployerHoleriteMB.Contract_agreement}" value="#{c}" />
 					</h:commandLink>
 					&nbsp;<!-- Dando espaço entre os button's -->
 					<h:commandLink value=" View" styleClass="btn btn-primary ,glyphicon glyphicon-list-alt"
 						action="showHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{hybridManagedBean.Contract_agreement}" value="#{c}" />
+							target="#{EmployerHoleriteMB.Contract_agreement}" value="#{c}" />
 					</h:commandLink>
 				</h:column>
 
