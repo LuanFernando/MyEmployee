@@ -28,28 +28,65 @@ body {
 	<ui:include src="include/header.xhtml" />
 
 
-<!-- Conteúdo principal da página -->
-		<main class="container">
-		<h1>Employee Holerite</h1>
-		<hr/>
-		<f:view>
-			<h:form>
+	<!-- Conteúdo principal da página -->
+	<main class="container">
+	<h1>Employee Holerite</h1>
+	<hr />
+	<f:view>
+		<h:form styleClass="navbar-form navbar-left">
 			<div class="form-group">
-				<h:outputLabel value="Contract:"/>
-				<h:inputText disabled="true" styleClass="form-control" value="#{hybridManagedBean.employee.codigo}"/>
+				<h:outputLabel value="N° Contrato: " />
+				<h:inputText disabled="true" styleClass="form-control" value="" />
 			</div>
+			&nbsp;<!-- espaço -->
 			<div class="form-group">
-				<h:outputLabel value="Name:"/>
-				<h:inputText styleClass="form-control" value="#{hybridManagedBean.employee.empregado.nomeCompleto}"/>
+				<h:outputLabel value="Nome: " />
+				<h:inputText disabled="true" styleClass="form-control" value="" />
 			</div>
-			<div class="form-group">
-				<h:outputLabel value="Email:"/>
-				<h:inputText styleClass="form-control" value="#{hybridManagedBean.employee.cargo}"/>
-			</div>
-		
-			</h:form>			
-			</f:view>
-		</main>
+			
+			<!--Inicio da lista de holerite do empregado  -->
+			
+			<h:dataTable styleClass="table table-striped" var="c"
+				value="#{hybridManagedBean.listEmpregado}">
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel styleClass="list-group-item active" value="Nº Holerite" />
+					</f:facet>
+					<h:outputText styleClass="list-group-item list-group-item-info" value="" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel styleClass="list-group-item active" value="Cargo" />
+					</f:facet>
+					<h:outputText styleClass="list-group-item list-group-item-info" value="" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel styleClass="list-group-item active" value="Data" />
+					</f:facet>
+					<h:outputText styleClass="list-group-item list-group-item-info" value="" />
+				</h:column>
+				<h:column>
+
+                 <!-- para eventuais melhorias o button será habilitado para efetuar download direto -->
+				<h:commandLink value=" Download" styleClass="btn btn-default"
+						action="showHolerite?faces-redirect=true">
+						<f:setPropertyActionListener
+							target="#{hybridManagedBean.Contract_agreement}" value="#{c}" />
+					</h:commandLink>
+					
+					&nbsp;<!-- Dando espaço entre os button's -->
+					<h:commandLink value=" View" styleClass="btn btn-primary "
+						action="showHolerite?faces-redirect=true">
+						<f:setPropertyActionListener
+							target="#{hybridManagedBean.Contract_agreement}" value="#{c}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+			<!--Fim.  -->
+			
+		</h:form>
+	</f:view> </main>
 
 	<!-- include footer -->
 	<ui:include src="include/footer.xhtml" />
