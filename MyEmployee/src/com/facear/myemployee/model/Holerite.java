@@ -1,5 +1,7 @@
 package com.facear.myemployee.model;
 
+import java.util.Date;
+
 public class Holerite 
                   {
 	          private int codigo = 0;
@@ -7,7 +9,12 @@ public class Holerite
 	          private Employee employee;
 	          private Contract_agreement contract_agreement;
 	          private Benefits  benefits;
+	          private Double desconto = 0.00;
+	          private String datagerar;
+	          private Double totalliquido = 0.00;
+	          private String status;// TRUE FALSE
 	          private Employee_taxes impostos = new Employee_taxes(codigo, null, codigo);
+	          
 	
 	public Holerite()
 	{
@@ -15,7 +22,7 @@ public class Holerite
 	}
 	
 	public Holerite(int codigo, Employer employer, Employee employee, Contract_agreement contract_agreement,
-			Benefits benefits, Employee_taxes impostos) {
+			Benefits benefits, Employee_taxes impostos,Double desconto,String datagerar,Double totaliquido,String status ) {
 		     super();
 		     this.codigo = codigo;
 		     this.employer = employer;
@@ -23,6 +30,11 @@ public class Holerite
 		     this.contract_agreement = contract_agreement;
 		     this.benefits = benefits;
 		     this.impostos = impostos;
+		     this.desconto = desconto;
+		     this.datagerar = datagerar;
+		     this.totalliquido = totaliquido;
+		     this.status = status;
+		     
 	}
 
 	public int getCodigo() {
@@ -60,5 +72,39 @@ public class Holerite
 	}
 	public void setImpostos(Employee_taxes impostos) {
 		this.impostos = impostos;
-	}		
+	}
+
+	public Double getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(Double desconto) {
+		this.desconto = desconto;
+	}
+
+	public String getDatagerar() {
+		return datagerar;
+	}
+
+	public void setDatagerar(String datagerar) {
+		this.datagerar = datagerar;
+	}
+
+	public Double getTotalliquido() {
+		return totalliquido;
+	}
+
+	public void setTotalliquido(Double totalliquido) {
+		this.totalliquido = totalliquido;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}	
+	
+	
 }

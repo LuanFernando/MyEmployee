@@ -13,8 +13,11 @@ public class HoleriteService
 	
 	HoleriteDAO dao = new HoleriteDAO();
 
-	public Holerite insertHolerite(Holerite holerite)
+	public Holerite insertHolerite(Holerite h)
     {
+		if(h != null){
+			dao.insert(h);
+		}
 		return null;
 	}
 

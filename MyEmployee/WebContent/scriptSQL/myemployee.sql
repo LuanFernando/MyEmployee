@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Nov-2017 às 19:03
+-- Generation Time: 20-Nov-2017 às 01:08
 -- Versão do servidor: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -176,7 +176,7 @@ CREATE TABLE `holerite` (
   `Irrf` double NOT NULL,
   `Inss` double NOT NULL,
   `Transporte` double NOT NULL,
-  `DataGerar` date NOT NULL,
+  `DataGerar` varchar(10) NOT NULL,
   `TotalLiquido` double NOT NULL,
   `Status` varchar(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

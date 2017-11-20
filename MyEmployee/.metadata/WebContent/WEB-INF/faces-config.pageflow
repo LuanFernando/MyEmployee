@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15110268839710" configfile="/MyEmployee/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15110268839710" configfile="/MyEmployee/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf15111298921190" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15111298921191" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showHolerite.xhtml" id="pf15111298921192" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15111298921191" path="showHolerite.xhtml"/>
+  <links id="pf15111298921191" target="pf15111298921192" source="pf15111298921190" outcome="showHolerite" redirect="true"/>
+</pageflow:Pageflow>
