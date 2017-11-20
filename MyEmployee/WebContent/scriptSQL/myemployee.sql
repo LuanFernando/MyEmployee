@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Nov-2017 às 01:08
+-- Generation Time: 20-Nov-2017 às 14:28
 -- Versão do servidor: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -181,6 +181,17 @@ CREATE TABLE `holerite` (
   `Status` varchar(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `holerite`
+--
+
+INSERT INTO `holerite` (`Codigo`, `EmpregadorId`, `EmpregadoId`, `SalarioBase`, `Desconto`, `Irrf`, `Inss`, `Transporte`, `DataGerar`, `TotalLiquido`, `Status`) VALUES
+(1, 1, 4, 1500, 190, 0, 120, 70, '20/09/2017', 1310, 'Ativo'),
+(2, 1, 4, 1500, 190, 0, 120, 70, '20/10/2017', 1310, 'Ativo'),
+(3, 1, 4, 1500, 190, 0, 120, 70, '20/11/2017', 1310, 'Ativo'),
+(4, 1, 3, 1600, 218, 0, 128, 90, '20/09/2017', 1382, 'Ativo'),
+(5, 1, 3, 1600, 218, 0, 128, 90, '20/10/2017', 1382, 'Ativo');
+
 -- --------------------------------------------------------
 
 --
@@ -290,7 +301,7 @@ ALTER TABLE `employer`
 -- AUTO_INCREMENT for table `holerite`
 --
 ALTER TABLE `holerite`
-  MODIFY `Codigo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
