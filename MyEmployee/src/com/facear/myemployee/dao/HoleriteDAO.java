@@ -10,15 +10,15 @@ import com.facear.myemployee.model.*;
 
 public class HoleriteDAO extends GenericDAO
                                     {
-	private PreparedStatement ps;
+	private PreparedStatement ps = null;
 	
 	private Holerite ho ;
 	private Employee employee = new Employee(0, null, null, null, null, null, null, null, null, 0, null, null, null, null, null, null, null);
 	private Employer employer = new Employer(0, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-	private Contract_agreement contract;
+	private Cargo cargo;
+	private Contract_agreement contract = new Contract_agreement(0, null, null, null, null, null, null, 0);
 	private Employee_taxes taxes;
 	private Benefits benefits;
-	private Cargo cargo;
 	
 	
 	/*Inserir holerite no database*/
@@ -28,11 +28,11 @@ public class HoleriteDAO extends GenericDAO
 	
 	/*listar a tabela holerite de acordo com o empregador */
 	private String SELECT_HOLERITE = ("SELECT * FROM contract_agreement"
-			                        + "INNER JOIN employee ON (contract_agreement.EmpregadoId = employee.Codigo)"
-			                        + "INNER JOIN employer ON (contract_agreement.EmpregadorId = employer.Codigo)"
-			                        + "INNER JOIN cargo ON (contract_agreement.CargoId = cargo.Codigo)"
-			                        + "INNER JOIN holerite ON (contract_agreement.EmpregadoId = holerite.EmpregadoId)"
-			                        + "WHERE employee.Nome=?");	
+			                        + " INNER JOIN employee ON (contract_agreement.EmpregadoId = employee.Codigo)"
+			                        + " INNER JOIN employer ON (contract_agreement.EmpregadorId = employer.Codigo)"
+			                        + " INNER JOIN cargo ON (contract_agreement.CargoId = cargo.Codigo)"
+			                        + " INNER JOIN holerite ON (contract_agreement.EmpregadoId = holerite.EmpregadoId)"
+			                        + " WHERE employee.Nome=?");	
 	
 
 	public void insert(Holerite h)
@@ -87,7 +87,7 @@ public class HoleriteDAO extends GenericDAO
 				ho = new Holerite();
 				employee = new Employee();
 				employer = new Employer();
-				contract = new Contract_agreement(0, employer, employee, INSERT_SQL, null, INSERT_SQL, INSERT_SQL, 0);
+				contract = new Contract_agreement(0, employer, employee, null, null, null, null, 0);
 				cargo = new Cargo(0, null, null);
 				
 				employee.setCodigo(rs.getInt("employee.Codigo"));

@@ -33,38 +33,42 @@ body {
 	<h1>Employee Holerite</h1>
 	<hr />
 	<f:view>
-		<h:form styleClass="navbar-form navbar-left">
-			<div class="form-group">
-				<h:outputLabel value="N° Contrato: " />
-				<h:inputText disabled="true" styleClass="form-control" value="" />
-			</div>
-			&nbsp;<!-- espaço -->
-			<div class="form-group">
-				<h:outputLabel value="Nome: " />
-				<h:inputText disabled="true" styleClass="form-control" value="" />
-			</div>
-			
+		<h:form styleClass="navbar-form navbar-left" >
+				
 			<!--Inicio da lista de holerite do empregado  -->
 			
 			<h:dataTable styleClass="table table-striped" var="c"
-				value="#{EmployeeHoleriteMB.listHolerite}">
+				value="#{employeeHoleriteMB.listHolerite}">
 				<h:column>
 					<f:facet name="header">
 						<h:outputLabel styleClass="list-group-item active" value="Nº Holerite" />
 					</f:facet>
-					<h:outputText styleClass="list-group-item list-group-item-info" value="c.codigo" />
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.codigo}" />
 				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel styleClass="list-group-item active" value="Nº Contrato" />
+					</f:facet>
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.contract_agreement.codigo}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel styleClass="list-group-item active" value="Nome" />
+					</f:facet>
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.employee.nomeCompleto}" />
+				</h:column>
+				
 				<h:column>
 					<f:facet name="header">
 						<h:outputLabel styleClass="list-group-item active" value="Cargo" />
 					</f:facet>
-					<h:outputText styleClass="list-group-item list-group-item-info" value="c.cargo.codigo" />
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.cargo.descricao}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
 						<h:outputLabel styleClass="list-group-item active" value="Data" />
 					</f:facet>
-					<h:outputText styleClass="list-group-item list-group-item-info" value="c.datagerar" />
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.datagerar}" />
 				</h:column>
 				<h:column>
 
@@ -72,14 +76,14 @@ body {
 				<h:commandLink value=" Download" styleClass="btn btn-default"
 						action="showHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{EmployeeHoleriteMB.Contract_agreement}" value="#{c}" />
+							target="#{employeeHoleriteMB.Contract_agreement}" value="#{c}" />
 					</h:commandLink>
 					
 					&nbsp;<!-- Dando espaço entre os button's -->
 					<h:commandLink value=" View" styleClass="btn btn-primary "
 						action="showHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{EmployeeHoleriteMB.Contract_agreement}" value="#{c}" />
+							target="#{employeeHoleriteMB.Contract_agreement}" value="#{c}" />
 					</h:commandLink>
 				</h:column>
 			</h:dataTable>
