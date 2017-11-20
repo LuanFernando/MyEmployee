@@ -35,27 +35,34 @@ body {
 				value="#{hybridManagedBean.listEmpregado}">
 				<h:column>
 					<f:facet name="header">
-						<h:outputLabel value="Id" />
+						<h:outputLabel styleClass="list-group-item active" value="Id" />
 					</f:facet>
-					<h:outputText value="#{c.codigo}" />
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.codigo}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputLabel value="Name" />
+						<h:outputLabel styleClass="list-group-item active" value="Name" />
 					</f:facet>
-					<h:outputText value="#{c.empregado.nomeCompleto}" />
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.empregado.nomeCompleto}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">
-						<h:outputLabel value="Cargo" />
+						<h:outputLabel styleClass="list-group-item active" value="Cargo" />
 					</f:facet>
-					<h:outputText value="#{c.cargo}" />
+					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.cargo}" />
 				</h:column>
 				<h:column>
-					<h:commandLink value="View" styleClass="btn btn-default"
+
+				<h:commandLink value=" Generate" styleClass="btn btn-default"
 						action="showHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{hybridManagedBean.contract.}" value="#{c}" />
+							target="#{hybridManagedBean.Contract_agreement}" value="#{c}" />
+					</h:commandLink>
+					&nbsp;<!-- Dando espaço entre os button's -->
+					<h:commandLink value=" View" styleClass="btn btn-primary ,glyphicon glyphicon-list-alt"
+						action="showHolerite?faces-redirect=true">
+						<f:setPropertyActionListener
+							target="#{hybridManagedBean.Contract_agreement}" value="#{c}" />
 					</h:commandLink>
 				</h:column>
 
