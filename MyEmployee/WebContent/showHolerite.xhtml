@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>My Employee | ShowHolerite</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<style>
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+</style>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" />
+</h:head>
+<h:body>
+
+	<!-- include header -->
+	<ui:include src="include/header.xhtml" />
+
+
+<!-- Conteúdo principal da página -->
+		<main class="container">
+		<h1>Employee Holerite</h1>
+		<hr/>
+		<f:view>
+			<h:form>
+			<div class="form-group">
+				<h:outputLabel value="Contract:"/>
+				<h:inputText disabled="true" styleClass="form-control" value="#{hybridManagedBean.employee.codigo}"/>
+			</div>
+			<div class="form-group">
+				<h:outputLabel value="Name:"/>
+				<h:inputText styleClass="form-control" value="#{hybridManagedBean.employee.empregado.nomeCompleto}"/>
+			</div>
+			<div class="form-group">
+				<h:outputLabel value="Email:"/>
+				<h:inputText styleClass="form-control" value="#{hybridManagedBean.employee.cargo}"/>
+			</div>
+		
+			</h:form>			
+			</f:view>
+		</main>
+
+	<!-- include footer -->
+	<ui:include src="include/footer.xhtml" />
+
+</h:body>
+</html>
