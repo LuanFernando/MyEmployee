@@ -99,14 +99,14 @@
 				<h:commandLink value=" Download" styleClass="btn btn-default"
 						action="showHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{employeeHoleriteMB.Contract_agreement}" value="#{c}" />
+							target="#{employerHoleriteMB.contract}" value="#{c}" />
 					</h:commandLink>
 					
 					&nbsp;<!-- Dando espaço entre os button's -->
 					<h:commandLink value=" View" styleClass="btn btn-primary "
-						action="showHolerite?faces-redirect=true">
+						action="VisualizarHolerite?faces-redirect=true">
 						<f:setPropertyActionListener
-							target="#{employeeHoleriteMB.Contract_agreement}" value="#{c}" />
+							target="#{employerHoleriteMB.holerite}" value="#{c}" />
 					</h:commandLink>
 				</h:column>
 			</h:dataTable>

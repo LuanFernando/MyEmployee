@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15110268839710" configfile="/MyEmployee/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="showHolerite.xhtml" x="122" y="178" id="pf15111298921192" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="showHolerite.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="GerarHolerite.xhtml" id="pf15112659725570" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15112659725571" path="GerarHolerite.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="DetalhesEmpregador.xhtml" id="pf15112659725582" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15112659725571" path="DetalhesEmpregador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="GerarHolerite.xhtml" id="pf15112659725570" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15112659725571" path="GerarHolerite.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="DetalhesEmpregador.xhtml" id="pf15112659725582" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15112659725571" path="DetalhesEmpregador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="VisualizarHolerite.xhtml" id="pf15112722837190" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15112722837191" path="VisualizarHolerite.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="DetalhesEmpregado.xhtml" id="pf15112722837192" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15112722837191" path="DetalhesEmpregado.xhtml"/>
   <links id="pf15112659725571" target="pf15112659725582" source="pf15112659725570" outcome="DetalhesEmpregador" redirect="true"/>
+  <links id="pf15112722837191" target="pf15112722837192" source="pf15112722837190" outcome="DetalhesEmpregado" redirect="true"/>
 </pageflow:Pageflow>

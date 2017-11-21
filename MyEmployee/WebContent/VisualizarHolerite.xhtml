@@ -27,7 +27,7 @@
 
 			<div class="right_col" role="main">
 				<div class="">
-					
+					<!-- INSIRA SEU TITULO -->
 
 					<div class="clearfix"></div>
 					<div class="row">
@@ -51,9 +51,10 @@
 								<div class="x_content">
 									<br />
 
-						<!-- INSIRA SEU <form> -->
-	<main class="container">
-		<h1>Novo Holerite</h1>
+<!-- aqui -->
+				
+				<main class="container">
+		<h1>Holerite</h1>
 	
 	<div>
 		<hr/>
@@ -61,87 +62,88 @@
 				<h:form>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel for="holeriteCodigo" value="Codigo:"/>
-					<h:inputText id="holeriteCodigo" disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.codigo}"/>
+					<h:inputText id="holeriteCodigo" disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.codigo}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Id:"/>
-					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregado.codigo}"/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.employee.codigo}"/>
 				</div>
 				<div class="form-group,col-lg8 col-md-8 col-sm-8">
 					<h:outputLabel value="Empregado:"/>
-					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregado.nomeCompleto}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.employee.nomeCompleto}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Id:"/>
-					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregador.codigo}"/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.employer.codigo}"/>
 				</div>
 				<div class="form-group,col-lg10 col-md-10 col-sm-10">
 					<h:outputLabel value="Empregador:"/>
-					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregador.nomeCompleto}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.employer.nomeCompleto}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Salario Base:"/>
-					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.salario}"/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.contract_agreement.salario}"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="IRRF:"/>
-					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.irrf}"/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.irrf}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="INSS:"/>
-					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.inss}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.inss}"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Transporte:"/>
-					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.transporte}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.transporte}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Desconto:"/>
-					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.desconto}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.desconto}"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Data Geração:"/>
-					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.datagerar}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.datagerar}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Total Liquido:"/>
-					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.totalliquido}"/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.holerite.totalliquido}"/>
 				</div>
 				&nbsp;<!-- espaço  -->
 		       <div class="col-lg12 col-md-12 col-sm-12">
-		       <h5>Atenção!Preencha todos os campos solicitados</h5>
+		       <h5></h5>
 			   </div>	
 				<div id="actions" class="row">
 					<div class="col-md-12">
-					<h:commandLink styleClass="btn btn-primary" value="Save" action="#{employerHoleriteMB.insertHolerite}"/>
-					&nbsp;<!-- espaço  -->
-					<h:commandLink styleClass="btn btn-default" value="Cancel" action="DetalhesEmpregador?faces-redirect=true"/>
+					<h:commandLink styleClass="btn btn-default" value="Return" action="DetalhesEmpregado?faces-redirect=true"/>
 					</div>
 				</div>
 				</h:form>			
 			</f:view>
 	</div>
-</main>
-					<!-- INSIRA SEU </form> -->
-								</div>
+</main>					
+
+<!-- aqui -->
+									
+									
+											</div>
 							</div>
 						</div>
 					</div>
 
 				</div>
 			</div>
-			
+
 			<!-- / PAGINA PRINCIPAL -->
-			
+
 		</div>
 
-		
+
 
 		<!-- FOOTER PRINCIPAL -->
 		<ui:include src="incPainel/painelFooter.xhtml" />
@@ -152,3 +154,4 @@
 	<!-- /IMPORT JS -->
 </h:body>
 </html>
+									
