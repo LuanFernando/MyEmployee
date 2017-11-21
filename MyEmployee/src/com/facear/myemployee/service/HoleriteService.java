@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import com.facear.myemployee.dao.HoleriteDAO;
+import com.facear.myemployee.model.Contract_agreement;
 import com.facear.myemployee.model.Holerite;
 
 
@@ -13,7 +14,7 @@ public class HoleriteService
 	
 	HoleriteDAO dao = new HoleriteDAO();
 
-	public Holerite insertHolerite(Holerite h)
+	public Holerite insertHolerite(Contract_agreement h)
     {
 		if(h != null){
 			dao.insert(h);

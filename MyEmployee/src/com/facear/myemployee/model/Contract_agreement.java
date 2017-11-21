@@ -12,6 +12,7 @@ public class Contract_agreement
 	              private String dataInicio;
 	              private String dataFinal;
 	              private int cargaHoraria;
+	              private Holerite holerite = new Holerite(0, employer, employee, null, null, null, null, null, null, null);
 	
 	public Contract_agreement(int codigo, Employer employer, Employee employee, String cargo, Double salario,
 			String dataInicio, String dataFinal, int cargaHoraria) {
@@ -76,4 +77,30 @@ public class Contract_agreement
 	public void setCargaHoraria(int cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
 	}
+
+	public Employer getEmployer() {
+		return employer;
+	}
+
+	public void setEmployer(Employer employer) {
+		this.employer = employer;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public Holerite getHolerite() {
+		return holerite;
+	}
+
+	public void setHolerite(Holerite holerite) {
+		this.holerite = holerite;
+	}
+	
+	
 }

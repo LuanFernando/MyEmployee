@@ -84,34 +84,34 @@
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Salario Base:"/>
-					<h:inputText styleClass="form-control" value="0.00"/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.salario}"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="IRRF:"/>
-					<h:inputText styleClass="form-control" value="0.00"/>
+					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.irrf}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="INSS:"/>
-					<h:inputText styleClass="form-control" value="0.00"/>
+					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.inss}"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Transporte:"/>
-					<h:inputText styleClass="form-control" value="0.00"/>
+					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.transporte}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Desconto:"/>
-					<h:inputText styleClass="form-control" value="0.00"/>
+					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.desconto}"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Data Geração:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.datagerar}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Total Liquido:"/>
-					<h:inputText styleClass="form-control" value="0.00"/>
+					<h:inputText styleClass="form-control" value="#{employerHoleriteMB.contract.holerite.totalliquido}"/>
 				</div>
 				&nbsp;<!-- espaço  -->
 		       <div class="col-lg12 col-md-12 col-sm-12">
@@ -119,9 +119,9 @@
 			   </div>	
 				<div id="actions" class="row">
 					<div class="col-md-12">
-					<h:commandLink styleClass="btn btn-primary" value="Save" action="#{customerManagedBean.insertCustomerAction}"/>
+					<h:commandLink styleClass="btn btn-primary" value="Save" action="#{employerHoleriteMB.insertHolerite}"/>
 					&nbsp;<!-- espaço  -->
-					<h:commandLink styleClass="btn btn-default" value="Cancel" action="index?faces-redirect=true"/>
+					<h:commandLink styleClass="btn btn-default" value="Cancel" action="DetalhesEmpregador?faces-redirect=true"/>
 					</div>
 				</div>
 				</h:form>			

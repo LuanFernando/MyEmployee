@@ -16,6 +16,11 @@ public class Holerite
 	          private Employee_taxes impostos = new Employee_taxes(codigo, null, codigo);
 	          private Cargo cargo;
 	          
+	          
+	          /*variaveis auxiliares pois ainda nao tem a integração com o modulos imposto*/
+	          private Double irrf = 0.00;
+	          private Double inss = 0.00;
+	          private Double transporte = 0.00;
 	
 	public Holerite()
 	{
@@ -113,7 +118,32 @@ public class Holerite
 
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
+	}
+
+	public Double getIrrf() {
+		return irrf;
+	}
+
+	public void setIrrf(Double irrf) {
+		this.irrf = irrf;
+	}
+
+	public Double getInss() {
+		return inss;
+	}
+
+	public void setInss(Double inss) {
+		this.inss = inss;
+	}
+
+	public Double getTransporte() {
+		return transporte;
+	}
+
+	public void setTransporte(Double transporte) {
+		this.transporte = transporte;
 	}	
+	
 	
 	
 }

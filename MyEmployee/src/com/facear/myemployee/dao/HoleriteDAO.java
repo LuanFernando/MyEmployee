@@ -35,23 +35,24 @@ public class HoleriteDAO extends GenericDAO
 			                        + " WHERE employee.Nome=?");	
 	
 
-	public void insert(Holerite h)
+	public void insert(Contract_agreement h)
 	                            {
 		try{
 			openConnection();
 			
 			ps = connect.prepareStatement(INSERT_SQL);
-			
-			ps.setInt(1, h.getEmployee().getCodigo());
-			ps.setInt(2, h.getEmployer().getCodigo());
-			ps.setDouble(3,h.getContract_agreement().getSalario());
-			ps.setDouble(4, h.getDesconto());
-			ps.setDouble(5, h.getImpostos().getValor());//IRRF
-			ps.setDouble(6, h.getImpostos().getValor());//INSS
-			ps.setDouble(7, h.getImpostos().getValor());//TRANSPORTE
-			ps.setString(8, h.getDatagerar());
-			ps.setDouble(9, h.getTotalliquido());
-			ps.setString(10, h.getStatus());
+		
+		    
+			ps.setInt(1, h.getEmployer().getCodigo());
+			ps.setInt(2, h.getEmployee().getCodigo());
+			ps.setDouble(3,h.getSalario());
+			ps.setDouble(4, h.getHolerite().getDesconto());
+			ps.setDouble(5, h.getHolerite().getIrrf());//IRRF
+			ps.setDouble(6, h.getHolerite().getInss());//INSS
+			ps.setDouble(7, h.getHolerite().getTransporte());//TRANSPORTE
+			ps.setString(8, h.getHolerite().getDatagerar());
+			ps.setDouble(9, h.getHolerite().getTotalliquido());
+			ps.setString(10, "Ativo");
 			
 			
             ps.executeUpdate();
@@ -77,7 +78,7 @@ public class HoleriteDAO extends GenericDAO
  		openConnection();
 
 		ps = connect.prepareStatement(SELECT_HOLERITE);
-		ps.setString(1, "Maria Luiza Freitas");
+		ps.setString(1, "Mariela Gomes Lian");
 
 		ResultSet rs = ps.executeQuery();
 

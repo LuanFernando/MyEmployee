@@ -48,10 +48,8 @@ public class EmployerHoleriteMB implements Serializable
 	/*Method de insert*/
 	public String insertHolerite()throws ClassNotFoundException, IOException, SQLException
 	{
-		service.insertHolerite(holerite);
-		holerite = new Holerite();
-		listHolerite = service.listAll();
-		return "index";
+		service.insertHolerite(contract);
+		return "DetalhesEmpregador";
 	}
 	
 	public Holerite getHolerite() {
