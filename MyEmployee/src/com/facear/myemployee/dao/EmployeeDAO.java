@@ -22,7 +22,7 @@ public class EmployeeDAO extends GenericDAO{
 	
 	private String SQL_INNERJOIN = ("SELECT contract_agreement.EmpregadoId,employee.Nome,contract_agreement.EmpregadorId,"
 			                      + "contract_agreement.Codigo,cargo.Descricao,contract_agreement.Salario,contract_agreement.DataInicio,"
-			                      + "contract_agreement.DataFinal,contract_agreement.CargaHoraria"
+			                      + "contract_agreement.DataFinal,contract_agreement.CargaHoraria,employer.Nome"
 			                      + " FROM employer "
 			                      + "INNER JOIN contract_agreement ON (employer.Codigo = contract_agreement.EmpregadorId) "
 			                      + "INNER JOIN employee ON (employee.Codigo = contract_agreement.EmpregadoId) "
@@ -54,6 +54,7 @@ public class EmployeeDAO extends GenericDAO{
 					employee.setNomeCompleto(rs.getString("employee.Nome"));
 					/*Empregador*/
 					employer.setCodigo(rs.getInt("contract_agreement.EmpregadorId"));
+					employer.setNomeCompleto(rs.getString("employer.Nome"));
 					
 					Contract_agreement ct = new Contract_agreement(
 							rs.getInt("contract_agreement.Codigo"),

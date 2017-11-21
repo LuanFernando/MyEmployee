@@ -77,6 +77,30 @@ public class EmployerHoleriteMB implements Serializable
 	public void setListEmpregado(List<Contract_agreement> listEmpregado) {
 		this.listEmpregado = listEmpregado;
 	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public Employer getEmployer() {
+		return employer;
+	}
+
+	public void setEmployer(Employer employer) {
+		this.employer = employer;
+	}
+
+	public Contract_agreement getContract() {
+		return contract;
+	}
+
+	public void setContract(Contract_agreement contract) {
+		this.contract = contract;
+	}
 	
 	
 }

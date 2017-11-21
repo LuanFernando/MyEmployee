@@ -61,48 +61,48 @@
 				<h:form>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel for="holeriteCodigo" value="Codigo:"/>
-					<h:inputText id="holeriteCodigo" disabled="true" styleClass="form-control" value=""/>
+					<h:inputText id="holeriteCodigo" disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.codigo}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Id:"/>
-					<h:inputText  disabled="true" styleClass="form-control" value=""/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregado.codigo}"/>
 				</div>
 				<div class="form-group,col-lg8 col-md-8 col-sm-8">
 					<h:outputLabel value="Empregado:"/>
-					<h:inputText disabled="true" styleClass="form-control" value=""/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregado.nomeCompleto}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Id:"/>
-					<h:inputText  disabled="true" styleClass="form-control" value=""/>
+					<h:inputText  disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregador.codigo}"/>
 				</div>
 				<div class="form-group,col-lg10 col-md-10 col-sm-10">
 					<h:outputLabel value="Empregador:"/>
-					<h:inputText disabled="true" styleClass="form-control" value=""/>
+					<h:inputText disabled="true" styleClass="form-control" value="#{employerHoleriteMB.contract.empregador.nomeCompleto}"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Salario Base:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="0.00"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="IRRF:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="0.00"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="INSS:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="0.00"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Transporte:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="0.00"/>
 				</div>
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Desconto:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="0.00"/>
 				</div>
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Data Geração:"/>
@@ -111,7 +111,7 @@
 				
 				<div class="form-group,col-lg2 col-md-2 col-sm-2">
 					<h:outputLabel value="Total Liquido:"/>
-					<h:inputText styleClass="form-control" value=""/>
+					<h:inputText styleClass="form-control" value="0.00"/>
 				</div>
 				&nbsp;<!-- espaço  -->
 		       <div class="col-lg12 col-md-12 col-sm-12">

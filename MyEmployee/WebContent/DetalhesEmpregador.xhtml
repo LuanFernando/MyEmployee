@@ -14,7 +14,7 @@
 </h:head>
 <h:body class="nav-md">
 
-	<div class="container body">	
+	<div class="container body">
 
 		<div class="main_container">
 
@@ -51,51 +51,63 @@
 								<div class="x_content">
 									<br />
 
-						<!-- INSIRA SEU <form> -->
-					<main class="container"> <f:view>
-					<h1>Meus empregados</h1>
+									<!-- INSIRA SEU <form> -->
+									<main class="container"> <f:view>
+										<h1>Meus empregados</h1>
 
-		<h:form>
-			<h:dataTable styleClass="table table-striped" var="c"
-				value="#{employerHoleriteMB.listEmpregado}">
-				<h:column>
-					<f:facet name="header">
-						<h:outputLabel styleClass="list-group-item active" value="N° Contrato" />
-					</f:facet>
-					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.codigo}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputLabel styleClass="list-group-item active" value="Nome" />
-					</f:facet>
-					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.empregado.nomeCompleto}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputLabel styleClass="list-group-item active" value="Cargo" />
-					</f:facet>
-					<h:outputText styleClass="list-group-item list-group-item-info" value="#{c.cargo}" />
-				</h:column>
-				<h:column>
+										<h:form>
+											<h:dataTable styleClass="table table-striped" var="c"
+												value="#{employerHoleriteMB.listEmpregado}">
+												<h:column>
+													<f:facet name="header">
+														<h:outputLabel styleClass="list-group-item active"
+															value="N° Contrato" />
+													</f:facet>
+													<h:outputText
+														styleClass="list-group-item list-group-item-info"
+														value="#{c.codigo}" />
+												</h:column>
+												<h:column>
+													<f:facet name="header">
+														<h:outputLabel styleClass="list-group-item active"
+															value="Nome" />
+													</f:facet>
+													<h:outputText
+														styleClass="list-group-item list-group-item-info"
+														value="#{c.empregado.nomeCompleto}" />
+												</h:column>
+												<h:column>
+													<f:facet name="header">
+														<h:outputLabel styleClass="list-group-item active"
+															value="Cargo" />
+													</f:facet>
+													<h:outputText
+														styleClass="list-group-item list-group-item-info"
+														value="#{c.cargo}" />
+												</h:column>
+												<h:column>
 
-				<h:commandLink value=" Generate" styleClass="btn btn-default"
-						action="showHolerite?faces-redirect=true">
-						<f:setPropertyActionListener
-							target="#{EmployerHoleriteMB.Contract_agreement}" value="#{c}" />
-					</h:commandLink>
+													<h:commandLink value=" Generate"
+														styleClass="btn btn-default"
+														action="showHolerite?faces-redirect=true">
+														<f:setPropertyActionListener
+															target="#{employerHoleriteMB.Contract_agreement}"
+															value="#{c}" />
+													</h:commandLink>
 					&nbsp;<!-- Dando espaço entre os button's -->
-					<h:commandLink value=" View" styleClass="btn btn-primary ,glyphicon glyphicon-list-alt"
-						action="showHolerite?faces-redirect=true">
-						<f:setPropertyActionListener
-							target="#{EmployerHoleriteMB.Contract_agreement}" value="#{c}" />
-					</h:commandLink>
-				</h:column>
+													<h:commandLink value=" View"
+														styleClass="btn btn-primary ,glyphicon glyphicon-list-alt"
+														action="GerarHolerite?faces-redirect=true">
+														<f:setPropertyActionListener
+															target="#{employerHoleriteMB.contract}"
+															value="#{c}" />
+													</h:commandLink>
+												</h:column>
 
-			</h:dataTable>
-		</h:form>
-	</f:view>
-	 </main>
-					<!-- INSIRA SEU </form> -->
+											</h:dataTable>
+										</h:form>
+									</f:view> </main>
+									<!-- INSIRA SEU </form> -->
 								</div>
 							</div>
 						</div>
@@ -103,12 +115,12 @@
 
 				</div>
 			</div>
-			
+
 			<!-- / PAGINA PRINCIPAL -->
-			
+
 		</div>
 
-		
+
 
 		<!-- FOOTER PRINCIPAL -->
 		<ui:include src="incPainel/painelFooter.xhtml" />
