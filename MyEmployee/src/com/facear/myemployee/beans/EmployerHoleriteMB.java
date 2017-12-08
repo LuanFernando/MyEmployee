@@ -38,7 +38,9 @@ public class EmployerHoleriteMB implements Serializable
 		serviceEm = new EmployeeService();
 		
 		contract = new Contract_agreement(0, employer, employee, null, 0.00, null, null, 0);
+		
 		holerite = new Holerite(0, employer, employee, contract, null, null, null, null, null, null);
+		
 		
 		/* return list employee */
 		listEmpregado = serviceEm.listAll();

@@ -102,6 +102,7 @@ public class HoleriteDAO extends GenericDAO
 				
 				cargo.setCodigo(rs.getInt("cargo.Codigo"));
 				cargo.setDescricao(rs.getString("cargo.Descricao"));
+				
 	
 				
 				/*Passando os valores para o objeto holerite*/
@@ -116,6 +117,11 @@ public class HoleriteDAO extends GenericDAO
 				
 				ho.setDatagerar(rs.getString("holerite.DataGerar"));
                 ho.setStatus(rs.getString("holerite.Status"));
+                
+                ho.setIrrf(rs.getDouble("Irrf"));
+                ho.setInss(rs.getDouble("Inss"));
+                ho.setTransporte(rs.getDouble("Transporte"));
+                
                 ho.setTotalliquido(rs.getDouble("holerite.TotalLiquido"));
                 ho.setDesconto(rs.getDouble("holerite.Desconto"));
                 
