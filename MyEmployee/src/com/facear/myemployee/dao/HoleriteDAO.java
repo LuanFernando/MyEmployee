@@ -91,6 +91,8 @@ public class HoleriteDAO extends GenericDAO
 				contract = new Contract_agreement(0, employer, employee, null, null, null, null, 0);
 				cargo = new Cargo(0, null, null);
 				
+				
+				
 				employee.setCodigo(rs.getInt("employee.Codigo"));
 				employee.setNomeCompleto(rs.getString("employee.Nome"));
 				
@@ -103,7 +105,6 @@ public class HoleriteDAO extends GenericDAO
 				cargo.setCodigo(rs.getInt("cargo.Codigo"));
 				cargo.setDescricao(rs.getString("cargo.Descricao"));
 				
-	
 				
 				/*Passando os valores para o objeto holerite*/
 				ho.setCodigo(rs.getInt("holerite.Codigo"));

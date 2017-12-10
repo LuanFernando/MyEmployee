@@ -47,6 +47,7 @@ public class EmployerHoleriteMB implements Serializable
 	
 	}
 	
+	
 	/*Method de insert*/
 	public String insertHolerite()throws ClassNotFoundException, IOException, SQLException
 	{

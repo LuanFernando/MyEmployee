@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import com.facear.myemployee.model.Contract_agreement;
 import com.facear.myemployee.model.Employee;
 import com.facear.myemployee.model.Employer;
+import com.facear.myemployee.model.Holerite;
 
 
 public class EmployeeDAO extends GenericDAO{
@@ -19,7 +20,7 @@ public class EmployeeDAO extends GenericDAO{
 	private PreparedStatement ps;
 	private Employee employee = new Employee(0, null, null, null, null, null, null, null, null, 0, null, null, null, null, null, null, null);
 	private Employer employer = new Employer(0, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-	
+	private Holerite holerite;
 	private String SQL_INNERJOIN = ("SELECT contract_agreement.EmpregadoId,employee.Nome,contract_agreement.EmpregadorId,"
 			                      + "contract_agreement.Codigo,cargo.Descricao,contract_agreement.Salario,contract_agreement.DataInicio,"
 			                      + "contract_agreement.DataFinal,contract_agreement.CargaHoraria,employer.Nome"
@@ -35,7 +36,13 @@ public class EmployeeDAO extends GenericDAO{
 	public List<Contract_agreement> listar(){
 
 		List<Contract_agreement> lista = new ArrayList<Contract_agreement>();
-
+		
+		Holerite holerite = new Holerite();
+		ImpostosDAO impostos = new ImpostosDAO();
+		BeneficiosDAO beneficios = new BeneficiosDAO();
+		Contract_agreement ct = null;
+		MetodosAuxiliaresDAO aux = new MetodosAuxiliaresDAO();
+		
  		try {
 			openConnection();
 			
@@ -48,6 +55,7 @@ public class EmployeeDAO extends GenericDAO{
 				while(rs.next()){
 					/*new object para nao dar bug de sobrecrever os dados anteriores*/
 					employee = new Employee();
+					holerite = new Holerite();
 					
 					/*Empregado*/
 					employee.setCodigo(rs.getInt("contract_agreement.EmpregadoId"));
@@ -56,7 +64,7 @@ public class EmployeeDAO extends GenericDAO{
 					employer.setCodigo(rs.getInt("contract_agreement.EmpregadorId"));
 					employer.setNomeCompleto(rs.getString("employer.Nome"));
 					
-					Contract_agreement ct = new Contract_agreement(
+					ct = new Contract_agreement(
 							rs.getInt("contract_agreement.Codigo"),
 							employer,
 							employee,
@@ -64,13 +72,24 @@ public class EmployeeDAO extends GenericDAO{
 							rs.getDouble("contract_agreement.Salario"),
 							rs.getString("contract_agreement.DataInicio"),
 							rs.getString("contract_agreement.DataFinal"),
-							rs.getInt("contract_agreement.CargaHoraria"));
+							rs.getInt("contract_agreement.CargaHoraria")							);
+					
+					holerite.setInss(impostos.Calculoinss(rs.getDouble("contract_agreement.Salario")));
+					holerite.setTransporte(beneficios.transporte(rs.getDouble("contract_agreement.Salario")-holerite.getInss()));
+					
+					holerite.setDatagerar(aux.date());
+					/*soma dos descontos*/
+					holerite.setDesconto(holerite.getInss()+holerite.getTransporte()+holerite.getIrrf());
+					/*total liquido*/
+					holerite.setTotalliquido(rs.getDouble("contract_agreement.Salario")-holerite.getDesconto());
+					
+					ct.setHolerite(holerite);
 					
 					lista.add(ct);
 				}
 			}
 			
-			
+		
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

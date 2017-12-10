@@ -25,6 +25,8 @@ public class Contract_agreement
 		          this.dataInicio = dataInicio;
 		          this.dataFinal = dataFinal;
 		          this.cargaHoraria = cargaHoraria;
+		          
+		          
 	}
 	
 	public int getCodigo() {
